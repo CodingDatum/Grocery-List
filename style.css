@@ -7,6 +7,12 @@
     letter-spacing: -0.5px;
     font-size:1rem;
 }
+body{
+    background-color: teal;
+}
+main{
+    margin-top:5px;
+}
 
 ul{
     list-style: none;
@@ -15,6 +21,12 @@ ul{
 h1{
     font-family: 'Hachi Maru Pop', cursive;
     font-weight: bold;
+    text-shadow: 2px 2px 2px grey;
+    color: white;
+}
+
+h2{
+    color:white;
 }
 
 li{
@@ -36,7 +48,8 @@ header .col{
 }
 .heading{
     padding: 1%;
-    background: linear-gradient(rgb(100, 149, 237), rgb(145, 219, 103))
+    background-image:url("images/gocery-store.jpg");
+    background-size:cover;
 }
 
 .container-fluid{
@@ -50,26 +63,29 @@ header .col{
 }
 
 .store{
-    background-color:deeppink;
+    background-color:rgba(210, 180, 140, 0.5);
     padding: 3% 5%;
 }
 
 .list-item-container{
     font-size: 1rem;
-    color:rgb(47, 121, 75);
+    color:white;
     display: flex;
     justify-content: flex-end;
     transition: 0.5s ease all;
+}
+a{
+    color: lightcyan;
 }
 .list-item-checked{
     text-decoration: line-through;
     opacity: 0.5;
 }
 .delete-button, .check-button{
-    height: 25px;
-    width: 25px;
-    padding: 5px;
-    margin: 5px;
+    height: 23px;
+    width: 23px;
+    padding: 3px;
+    margin: 3px;
     background-color: grey;
     border-radius: 50%;
 }
@@ -92,6 +108,7 @@ header .col{
 .button{
     padding:5px;
     margin: 5px;
+    font-weight: bold;
 }
 
 .shopping-category-list{

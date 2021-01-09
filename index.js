@@ -28,11 +28,36 @@ document.addEventListener("click", function(event){
 document.addEventListener("click", function(event){
     // event.preventDefault();
     var currentItem = event.target;
+    var childToRemove = currentItem.parentElement.parentElement; // grabs the entire div
 
     if(currentItem.classList[0] === "delete-button"){
-        var childToRemove = currentItem.parentElement.parentElement; // grabs the entire div
         removeListItem(childToRemove);
     };
+
+    var thisList = childToRemove.parentElement;
+    if(thisList.id === "grocery-list"){
+        var grandparent = thisList.parentElement;
+        var allLists = grandparent.childNodes;
+        allLists.forEach(function(item){
+            console.log(item);
+            // if(item.classList.contains("shopping-category-list")){
+            //     console.log(item.childNodes);
+            // }
+            //     var allItems = item.childNodes;
+            //     allItems.forEach(function(item2){
+            //         console.log(item2)
+            //     });
+            // };
+
+
+            // var allItems = item.childNodes.childNodes;
+            // allItems.forEach(function(item){
+            //     if(item.id === currentItem.parentElement.id)
+            //         item.parentElement.parentElement.removeChild(item);
+            // });
+        });
+    };
+
 });
 
 function removeListItem(item){
@@ -45,21 +70,33 @@ function removeListItem(item){
     setTimeout(function(){
         //remove entirely
         var parent = item.parentElement;
+        removeFromArray(item);
         parent.removeChild(item);
 
     }, 1000);
-    // REMOVE FROM OUR RESPONSIVE FULL GROCERY LIST
-
 
 }
 
-function addToList(e){
-    e.preventDefault();
+function removeFromArray(item){
+
+    var itemToDelete = item.firstChild.id;
+    console.log(itemToDelete);
+    for(let i = 0 ; i<shoppingList.length; i++){
+        if(shoppingList[i]===itemToDelete){
+            shoppingList.splice(i,1);
+        };
+    };
+
+}
+
+function addToList(event){
+    event.preventDefault();
 
     //will eventually need to pass this through 👇👇👇👇👇 as an argument when the function is called
-    var itemToAdd = document.getElementById("shopping-list-item").value;
+    var itemToAdd = document.getElementById("shopping-list-input").value;
     
     var newListItem = document.createElement("li");
+    newListItem.id = changeToId(itemToAdd);
     var listContainer = document.createElement("div");
 
     
@@ -106,6 +143,9 @@ function addButton(event){
     shoppingLists.push(newList.id);
     
     document.getElementById("shopping-list-container").append(newList);
+    document.getElementById("shopping-list-input").focus();
+    var finalTitle = buttonName.toUpperCase();
+    document.getElementById("shopping-list-type").innerHTML = "<h3>" + finalTitle + ":</h3>";
 }
 
 function displayList(event){
@@ -119,14 +159,12 @@ function displayList(event){
     };
 
     var clickedButtonListId = "#" + clickedButton + "-list";
-    console.log(clickedButton);
     var clickedButtonTitle = clickedButton.toUpperCase();
     var finalTitle = clickedButtonTitle.replace("-" , ' ');
     document.getElementById("shopping-list-type").innerHTML = "<h3>" + finalTitle + ":</h3>";
     for ( let i = 0; i<shoppingLists.length; i++){
         var choosingList = shoppingLists[i];
         var choiceList = "#" + choosingList;
-        console.log(choiceList);
         if(choiceList !== clickedButtonListId){
             document.querySelector(choiceList).style.display = "none";
         }else{
