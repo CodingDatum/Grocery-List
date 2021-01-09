@@ -1,0 +1,128 @@
+* {
+    text-align:center;
+    box-sizing: border-box;
+    margin: 0;
+    padding:0;
+    font-family: 'Indie Flower', cursive;
+    letter-spacing: -0.5px;
+    font-size:1rem;
+}
+
+ul{
+    list-style: none;
+}
+
+h1{
+    font-family: 'Hachi Maru Pop', cursive;
+    font-weight: bold;
+}
+
+li{
+    font-family: 'Montserrat', sans-serif;
+}
+form input{
+    text-align: left;
+    padding: 5px;
+}
+br{
+    height: 10%;
+}
+
+/* ALTERING BOOTSTRAP CLASSES */
+
+header .col{
+    display: flex;
+    justify-content: space-around;
+}
+.heading{
+    padding: 1%;
+    background: linear-gradient(rgb(100, 149, 237), rgb(145, 219, 103))
+}
+
+.container-fluid{
+    margin: 0;
+}
+
+.kitchen{
+    background-color:crimson;
+    padding: 3% 5%;
+    display:none;
+}
+
+.store{
+    background-color:deeppink;
+    padding: 3% 5%;
+}
+
+.list-item-container{
+    font-size: 1rem;
+    color:rgb(47, 121, 75);
+    display: flex;
+    justify-content: flex-end;
+    transition: 0.5s ease all;
+}
+.list-item-checked{
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+.delete-button, .check-button{
+    height: 25px;
+    width: 25px;
+    padding: 5px;
+    margin: 5px;
+    background-color: grey;
+    border-radius: 50%;
+}
+
+.check-button{
+    margin-left: 10px;
+}
+
+.delete-button:hover, .check-button:hover{
+    cursor: pointer;
+    background-color: wheat;
+    box-shadow: 2px 2px 2px grey;
+}
+
+.deleted-item{
+    transform: translateY(-900px);
+    opacity: 0.3;
+    z-index: 3;
+}
+.button{
+    padding:5px;
+    margin: 5px;
+}
+
+.shopping-category-list{
+    max-height: 330px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+
+/* IDS */
+
+#shopping-cart{
+    height: 40px;
+}
+
+#shopping-list-button-input{
+    width:75%;
+}
+
+/* #shopping-list{
+    height: 300px;
+    overflow-y: scroll;
+} */
+
+#shopping-list-buttons{
+    display: flex;
+    flex-wrap: wrap;
+    text-align:left;
+}
+
+#primarySubmit{
+    padding:2%;
+    margin: 2%;
+}
