@@ -147,6 +147,10 @@ function addButton(event){
     var finalTitle = buttonName.toUpperCase();
     document.getElementById("shopping-list-type").innerHTML = "<h3>" + finalTitle + ":</h3>";
     currentShoppingList = newList.id;
+    for(let i = 0; i < shoppingLists.length; i++){
+        document.getElementById(shoppingLists[i]).style.display = "none";
+    }
+    document.getElementById(currentShoppingList).style.display = "block";
 }
 
 function displayList(event){
