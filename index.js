@@ -146,6 +146,7 @@ function addButton(event){
     document.getElementById("shopping-list-input").focus();
     var finalTitle = buttonName.toUpperCase();
     document.getElementById("shopping-list-type").innerHTML = "<h3>" + finalTitle + ":</h3>";
+    currentShoppingList = newList.id;
 }
 
 function displayList(event){
