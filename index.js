@@ -34,7 +34,7 @@ document.addEventListener("click", function(event){
         removeListItem(childToRemove);
         var thisList = childToRemove.parentElement;
         
-        if(thisList.id === "grocery-list"){
+        if(thisList.id === "grocery-list" && document.querySelectorAll(".shopping-category").length > 1){
         var otherId = childToRemove.firstChild.id.slice(0, -1);
 
             document.getElementById(otherId).remove();
@@ -111,6 +111,7 @@ function addToList(event){
     shoppingList.push(itemToAdd);
 
     document.getElementById("shopping-list-form").reset();
+    document.getElementById("shopping-list-form").focus();
 }
 
 function addButton(event){
