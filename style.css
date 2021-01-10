@@ -8,7 +8,8 @@
     font-size:1rem;
 }
 body{
-    background-color: teal;
+    background-image:url("images/gocery-store.jpg");
+    background-size:cover;
 }
 main{
     margin-top:5px;
@@ -29,6 +30,14 @@ h2{
     color:white;
 }
 
+h3{
+    color: white;
+}
+
+label{
+    color: white;
+}
+
 li{
     font-family: 'Montserrat', sans-serif;
 }
@@ -39,7 +48,11 @@ form input{
 br{
     height: 10%;
 }
-
+footer{
+    background-color:rgba(0, 0, 139, 0.5);
+    color: lightgreen;
+    margin-top:10px;
+}
 /* ALTERING BOOTSTRAP CLASSES */
 
 header .col{
@@ -48,8 +61,6 @@ header .col{
 }
 .heading{
     padding: 1%;
-    background-image:url("images/gocery-store.jpg");
-    background-size:cover;
 }
 
 .container-fluid{
@@ -63,8 +74,8 @@ header .col{
 }
 
 .store{
-    background-color:rgba(210, 180, 140, 0.5);
     padding: 3% 5%;
+    background-color:rgba(0, 128, 128, 0.75);
 }
 
 .list-item-container{
@@ -112,9 +123,10 @@ a{
 }
 
 .shopping-category-list{
-    max-height: 330px;
+    height: 330px;
     overflow-y: scroll;
     scroll-behavior: smooth;
+    background-color:teal;
 }
 
 

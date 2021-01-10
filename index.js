@@ -48,15 +48,6 @@ document.addEventListener("click", function(event){
                 shoppingList.splice(i,1);
             };
         };
-        
-        // var numberOfItems = document.querySelectorAll(".list-item-container").length;
-        // for (let i = 0 ; i < numberOfItems; i++){
-        //     var itemContainer = document.querySelectorAll(".list-item-container")[i];
-        //     var itemToRemove = (itemContainer.firstChild.id).slice(0,-1);
-        //     if(itemToRemove === currentItem.parentElement.id){
-        //         itemContainer.remove();
-        //     };
-        // };
     };
 });
 
