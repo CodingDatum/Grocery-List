@@ -28,10 +28,10 @@ h1{
 }
 
 h2{
-    color:white;
-    background-color:rgba(144, 238, 144, 0.5);
+    background-color:rgba(0, 0, 139, 0.5);
+    color: white;
+    border-color:rgba(0, 0, 139, 0.5);
     border-style: outset;
-    border-color: rgba(144, 238, 144, 0.5);
     border-width:5px;
     text-shadow: 1px 1px black;
 }
@@ -86,14 +86,13 @@ header .col{
     background-color:rgba(144, 238, 144, 0.5);
     border-style: outset;
     border-color: rgba(144, 238, 144, 0.5);
-    border-width:5px;
+    border-width:8px;
     margin:0;
     padding: 0;
 }
 
 .list-item-container{
     font-size: 1rem;
-    font-weight:bold;
     display: flex;
     justify-content: flex-end;
     transition: 0.5s ease all;
@@ -143,7 +142,9 @@ a{
     scroll-behavior: smooth;
     /* background-color:teal; */
 }
-
+.shopping-category{
+    width: 100px;
+}
 
 /* IDS */
 
@@ -163,8 +164,8 @@ a{
 }
 
 #shopping-list-container li{
-    background-color:rgba(144, 238, 144, 0.5);
-    text-shadow: 0.5px 0.5px black;
+    text-shadow: 1px 1px black;
     padding: 2.5px;
-    color:orangered;
+    color:white;
+    letter-spacing: 1.5px
 }
