@@ -34,30 +34,30 @@ document.addEventListener("click", function(event){
         removeListItem(childToRemove);
     };
 
+// YOU CANT FIND THE ID OF THE LI FROM THE "ALL" GROCERY LIST BECAUSE WE NEVER ASSIGNED ONE!!!!!
+// 💥💥💥💥💥🎉🎆✨🎆✨✨✔✔✔✔✔✔✔🎁🎁🎁🎁🎁🎁👍👍👍👍👍👍👍👍👍👍👍👍👍👍
+
+
     var thisList = childToRemove.parentElement;
     if(thisList.id === "grocery-list"){
-        var grandparent = thisList.parentElement;
-        var allLists = grandparent.childNodes;
-        allLists.forEach(function(item){
-            console.log(item);
-            // if(item.classList.contains("shopping-category-list")){
-            //     console.log(item.childNodes);
-            // }
-            //     var allItems = item.childNodes;
-            //     allItems.forEach(function(item2){
-            //         console.log(item2)
-            //     });
-            // };
+        var otherId = childToRemove.firstChild.id.slice(0, -1);
 
-
-            // var allItems = item.childNodes.childNodes;
-            // allItems.forEach(function(item){
-            //     if(item.id === currentItem.parentElement.id)
-            //         item.parentElement.parentElement.removeChild(item);
-            // });
-        });
+        document.getElementById(otherId).remove();
+        for(let i = 0 ; i<shoppingList.length; i++){
+            if(shoppingList[i]===otherId){
+                shoppingList.splice(i,1);
+            };
+        };
+        
+        // var numberOfItems = document.querySelectorAll(".list-item-container").length;
+        // for (let i = 0 ; i < numberOfItems; i++){
+        //     var itemContainer = document.querySelectorAll(".list-item-container")[i];
+        //     var itemToRemove = (itemContainer.firstChild.id).slice(0,-1);
+        //     if(itemToRemove === currentItem.parentElement.id){
+        //         itemContainer.remove();
+        //     };
+        // };
     };
-
 });
 
 function removeListItem(item){
@@ -215,6 +215,10 @@ function createFullList(){
         checkButton.classList.add("check-button");
         
         newListItem.innerText = itemToAdd;
+
+        // THIS IS WHAT NEEDS TO BE ADDED or something like it, THEN when you go to see if the two id's match you can just remove
+        // the last character or index or wtv (in this case the number 2) so that they can match!
+        newListItem.id = itemToAdd + "2";
         newListItem.append(checkButton);
         newListItem.append(deleteButton);
         
