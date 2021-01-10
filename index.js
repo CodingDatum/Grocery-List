@@ -32,23 +32,23 @@ document.addEventListener("click", function(event){
 
     if(currentItem.classList[0] === "delete-button"){
         removeListItem(childToRemove);
+        var thisList = childToRemove.parentElement;
+        
+        if(thisList.id === "grocery-list"){
+        var otherId = childToRemove.firstChild.id.slice(0, -1);
+
+            document.getElementById(otherId).remove();
+            for(let i = 0 ; i<shoppingList.length; i++){
+                if(shoppingList[i]===otherId){
+                    shoppingList.splice(i,1);
+                };
+            };
+        };
     };
 
 // YOU CANT FIND THE ID OF THE LI FROM THE "ALL" GROCERY LIST BECAUSE WE NEVER ASSIGNED ONE!!!!!
 // 💥💥💥💥💥🎉🎆✨🎆✨✨✔✔✔✔✔✔✔🎁🎁🎁🎁🎁🎁👍👍👍👍👍👍👍👍👍👍👍👍👍👍
 
-
-    var thisList = childToRemove.parentElement;
-    if(thisList.id === "grocery-list"){
-        var otherId = childToRemove.firstChild.id.slice(0, -1);
-
-        document.getElementById(otherId).remove();
-        for(let i = 0 ; i<shoppingList.length; i++){
-            if(shoppingList[i]===otherId){
-                shoppingList.splice(i,1);
-            };
-        };
-    };
 });
 
 function removeListItem(item){
@@ -119,7 +119,7 @@ function addButton(event){
     var newButton = document.createElement("button");
     newButton.classList.add("shopping-category");
     newButton.classList.add("button");
-    newButton.classList.add("btn-warning");
+    newButton.classList.add("btn-outline-success");
     newButton.innerHTML = buttonName;
     buttonName = changeToId(buttonName);
     newButton.id = buttonName;

@@ -6,6 +6,7 @@
     font-family: 'Indie Flower', cursive;
     letter-spacing: -0.5px;
     font-size:1rem;
+    transition: 1s all ease;
 }
 body{
     background-image:url("images/gocery-store.jpg");
@@ -22,16 +23,22 @@ ul{
 h1{
     font-family: 'Hachi Maru Pop', cursive;
     font-weight: bold;
-    text-shadow: 2px 2px 2px grey;
+    text-shadow: 2px 2px 2px black;
     color: white;
 }
 
 h2{
     color:white;
+    background-color:rgba(144, 238, 144, 0.5);
+    border-style: outset;
+    border-color: rgba(144, 238, 144, 0.5);
+    border-width:5px;
+    text-shadow: 1px 1px black;
 }
 
 h3{
     color: white;
+    text-shadow: 1px 1px black;
 }
 
 label{
@@ -65,6 +72,7 @@ header .col{
 
 .container-fluid{
     margin: 0;
+    padding:0;
 }
 
 .kitchen{
@@ -75,15 +83,22 @@ header .col{
 
 .store{
     padding: 3% 5%;
-    background-color:rgba(0, 128, 128, 0.75);
+    background-color:rgba(144, 238, 144, 0.5);
+    border-style: outset;
+    border-color: rgba(144, 238, 144, 0.5);
+    border-width:5px;
+    margin:0;
+    padding: 0;
 }
 
 .list-item-container{
     font-size: 1rem;
-    color:white;
+    font-weight:bold;
     display: flex;
     justify-content: flex-end;
     transition: 0.5s ease all;
+    width: auto;
+    height:auto;
 }
 a{
     color: lightcyan;
@@ -126,24 +141,15 @@ a{
     height: 330px;
     overflow-y: scroll;
     scroll-behavior: smooth;
-    background-color:teal;
+    /* background-color:teal; */
 }
 
 
 /* IDS */
 
-#shopping-cart{
-    height: 40px;
-}
-
 #shopping-list-button-input{
-    width:75%;
+    width:100px;
 }
-
-/* #shopping-list{
-    height: 300px;
-    overflow-y: scroll;
-} */
 
 #shopping-list-buttons{
     display: flex;
@@ -154,4 +160,11 @@ a{
 #primarySubmit{
     padding:2%;
     margin: 2%;
+}
+
+#shopping-list-container li{
+    background-color:rgba(144, 238, 144, 0.5);
+    text-shadow: 0.5px 0.5px black;
+    padding: 2.5px;
+    color:orangered;
 }

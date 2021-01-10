@@ -21,10 +21,10 @@
 
             <!-- SEARCH BAR -->
             <form>
-                <label><h2>Search list: </h2></label>
-                <input type="text" name="primarySearch" id="primarySearch" placeholder="Not yet functional">
-                <button class="button btn-primary" type="submit" name="primarySubmit" id="primarySubmit">Search</button>
-            </form>                
+                <label><h2>Add Category:</h2></label>
+                <input type="text" id="shopping-list-button-input" placeholder="ex: veggies, fruit" maxlength="15">
+                <button type="submit" id="shopping-list-button-submit" class="button btn-primary">Add</button>
+            </form>              
         </div>
     </header>
     <main>
@@ -35,15 +35,9 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col col-4">
-                            <form>
-                                <label>Add Category:</label>
-                                <br>
-                                <input type="text" id="shopping-list-button-input" placeholder="ex: Meats" maxlength="15">
-                                <button type="submit" id="shopping-list-button-submit" class="button btn-primary">Add</button>
-                            </form>
                             <h3>Categories</h3>
                             <div id="shopping-list-buttons">
-                                <button id="grocery" class="shopping-category button btn-warning">ALL</button>
+                                <button id="grocery" class="shopping-category button btn-success">ALL</button>
                             </div>
                         </div>
                         <div class="col">
