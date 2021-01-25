@@ -13,7 +13,6 @@ document.getElementById("shopping-list-button-submit").addEventListener("click",
 document.getElementById("shopping-list-buttons").addEventListener("click", displayList);
 
 
-
 // EVENT LISTENER FOR CHECK BUTTONS
 document.addEventListener("click", function(event){
 
@@ -50,6 +49,20 @@ document.addEventListener("click", function(event){
 // 💥💥💥💥💥🎉🎆✨🎆✨✨✔✔✔✔✔✔✔🎁🎁🎁🎁🎁🎁👍👍👍👍👍👍👍👍👍👍👍👍👍👍
 
 });
+
+document.getElementById("email-submit").onclick = function(){
+    let emailVersion = ""
+    for (let i = 0 ; i < shoppingList.length; i++){
+        emailVersion = emailVersion + (shoppingList[i] + "%0D%0A")
+    }
+    sendEmail(emailVersion);
+}
+
+function sendEmail(list){
+    var mailtoAddress = document.getElementById("email").value;
+    document.getElementById("email-submit").href = "mailto:" + mailtoAddress + "?subject=Groceries&body=" + list;
+    document.getElementById("email").value = "";
+}
 
 function removeListItem(item){
 
@@ -223,3 +236,4 @@ function createFullList(){
     };
 
 }
+
