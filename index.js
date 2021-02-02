@@ -33,7 +33,7 @@ document.addEventListener("click", function(event){
         removeListItem(childToRemove);
         var thisList = childToRemove.parentElement;
         
-        if(thisList.id === "grocery-list" && document.querySelectorAll(".shopping-category").length > 1){
+        if(thisList.id === "grocery-list" && document.querySelectorAll(".shopping-category").length > 0){
         var otherId = childToRemove.firstChild.id.slice(0, -1);
 
             document.getElementById(otherId).remove();
